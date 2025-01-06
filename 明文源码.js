@@ -8,7 +8,7 @@ let userID = '1339d12e-327f-4dc7-b8bf-c0e603de158f';
 const bestCFIP = "www.visa.com.hk"
 
 // 用于 Cloudflare 网站的代理 IP
-const proxyIPs = ['cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org']; // （https://github.com/HappyLeslieAlexander/Cloudflare_VLESS/blob/main/proxyip.txt 中的地址也可以）
+const proxyIPs = ['cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 
 let dohURL = 'https://cloudflare-dns.com/dns-query'; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
@@ -129,8 +129,8 @@ export default {
                     }
                     default:
                         // return new Response('Not found', { status: 404 });
-                        // For any other path, reverse proxy to 'leslieblog.top' and return the original response
-                        url.hostname = 'leslieblog.top';
+                        // For any other path, reverse proxy to 'www.233id.com' and return the original response
+                        url.hostname = 'www.233id.com';
                         url.protocol = 'https:';
                         request = new Request(url, request);
                         return await fetch(request);
